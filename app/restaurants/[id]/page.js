@@ -16,7 +16,7 @@ export default function RestaurantDetails() {
   }
 
   return (
-    <Box>
+    <Box sx={{ backgroundColor: "#d9e0c4ff", borderRadius: 2, minHeight: "100vh" }}>
       {/* Header */}
       <Headers />
 
