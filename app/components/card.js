@@ -13,13 +13,13 @@ import {
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import StarIcon from "@mui/icons-material/Star";
 
-export default function RestaurantCard({ image, name, rating, cuisines = [], location }) {
+export default function RestaurantCard({ image, name, rating, popularCuisines = [], location }) {
   return (
     <Card sx={{ width: 320, borderRadius: 2, boxShadow: 3, overflow: "hidden" }}>
       {/* image container - next/image fill needs parent position relative */}
       <Box sx={{ position: "relative", width: "100%", height: 180 }}>
        {image ? (
-        <Image src={image } alt={name} fill style={{ objectFit: "cover" }} />
+        <Image src={image } alt={name} fill unoptimized style={{ objectFit: "cover" }} />
        ) : null}
       </Box>
 
@@ -36,7 +36,7 @@ export default function RestaurantCard({ image, name, rating, cuisines = [], loc
         </Stack>
 
         <Stack direction="row" spacing={1} mt={1} flexWrap="wrap">
-          {cuisines.map((tag) => (
+          {popularCuisines.map((tag) => (
             <Chip key={tag} label={tag} size="small" sx={{ textTransform: "capitalize" }} />
           ))}
         </Stack>

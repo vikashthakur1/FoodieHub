@@ -38,6 +38,7 @@ export default function RestaurantDetails() {
               src={restaurant.image}
               alt={restaurant.name}
               fill
+              unoptimized
               style={{ objectFit: "cover" }}
             />
 
@@ -93,7 +94,7 @@ export default function RestaurantDetails() {
 
             <Typography variant="h6">🍴 Popular Cuisines</Typography>
             <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
-              {restaurant.cuisines.map((cuisine, i) => (
+              {restaurant.popularCuisines.map((cuisine, i) => (
                 <Chip key={i} label={cuisine} color="primary" />
               ))}
             </Box>
